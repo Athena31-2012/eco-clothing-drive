@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zion Heights Eco Team - Eco-Friendly Practices and Events">
+    <title>Zion Heights Eco Team</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f3f3f3;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #009688;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* Hero Section with Moving Background */
+        .hero {
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            font-size: 2.5em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h2 {
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            z-index: 2;
+        }
+
+        .hero .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            animation: slideBackground 10s infinite ease-in-out;
+            background: linear-gradient(45deg, rgba(0, 150, 136, 0.5), rgba(156, 87, 182, 0.5), rgba(52, 152, 219, 0.5));
+            background-size: 300% 300%;
+            z-index: 1;
+        }
+
+        /* Slider Animation */
+        @keyframes slideBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            25% {
+                background-position: 50% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            75% {
+                background-position: 50% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Main Content Area */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Section Style */
+        .section {
+            padding: 40px 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            color: white;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+
+        .section p {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        /* Specific Section Colors */
+        .about-section {
+            background-color: #009688; /* Green */
+        }
+
+        .events-section {
+            background-color: #9b59b6; /* Purple */
+        }
+
+        .contact-section {
+            background-color: #3498db; /* Blue */
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #00796b;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #004d40;
+        }
+
+        /* Hidden Text for "Learn More" */
+        .hidden-content {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #f1f1f1;
+        }
+
+        /* Pop-Out Effect for Content */
+        .popup-content {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .popup-content.show {
+            display: block;
+            opacity: 1;
+        }
+
+        .popup-content h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .popup-content p {
+            font-size: 1.2em;
+        }
+
+        .popup-close {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .popup-close:hover {
+            background-color: #c0392b;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #00796b;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            header p {
+                font-size: 1.1em;
+            }
+
+            .hero h2 {
+                font-size: 2em;
+            }
+
+            .section h2 {
+                font-size: 2em;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Zion Heights Eco Team</h1>
+        <p>Promoting Eco-friendly Practices and Sustainable Living</p>
+    </header>
+
+    <!-- Hero Section with Moving Background -->
+    <div class="hero">
+        <div class="slider"></div>
+        <h2>Building a Greener Tomorrow, Today</h2>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <!-- About Us Section -->
+        <div class="section about-section" id="about">
+            <h2>About Us</h2>
+            <p>We are committed to making Zion Heights a greener and more sustainable community. Our team focuses on raising awareness about eco-friendly practices, reducing waste, and promoting conservation. Drop by our next meeting if you have any questions or want to join our efforts!</p>
+            <img src="https://s3-media0.fl.yelpcdn.com/bphoto/B-8of9az3Yzl0_eBW_9mWA/348s.jpg" alt="Clothing Drive Event" style="max-width: 150%; height: 300px; margin-top: 20px; border-radius: 8px; display: block; margin-left: auto; margin-right: auto;">
+              <!-- Adding Image -->
+    
+
+            <button class="btn" onclick="showPopup('aboutPopup')">Learn More</button>
+        </div>
+
+        <!-- Events Section -->
+        <div class="section events-section" id="events">
+            <h2>Upcoming Events</h2>
+            <p>Join us for the **Clothing Drive** at Zion Heights! From Jan 27-Feb 5 we will be collecting clothes to donate to Recycling awards- a collection service helping those who need to get rid of unwanted,reusable, goods, and those who are in desperate need of them. Your participation can make a difference! Click here to learn how clothes impact our enviornment</p> 
+<img src="https://images.squarespace-cdn.com/content/v1/5937054c6a496359c601ecb2/1668178496980-2Q8DM52HHMYDUJGJ86RW/DSC06213.jpg" alt="About us" style="max-width: 100%; height: 200px; margin-top: 20px; border-radius: 8px; display: block; margin-left: auto; margin-right: auto;">
+<button class="btn" onclick="showPopup('eventsPopup')">More info</button>
+</div>
+
+        <!-- Contact Section -->
+        <div class="section contact-section" id="contact">
+            <h2>Global impact of fast fashion</h2>
+            <p>Fast fashion not only impacts the enviornment, but has a global impact as well! Some of our favourite brands (Nike, H&M,ZARA, etc.) are involved in huge scandals revealing their part in the fast fashion issue- depletion of natural resources and social issues as clothing gets cheaper and wardrobes are frequently updated. 
+            After female workers charged Nike for sexual assault, claims by the International Labour Rights Forum about bad working conditions, animal rights issues (exotic animal skin, hair, etc.) and the greenwashed case against them, Nike is  making a start to improve their brand. Other brands have also sworn to stop sweatshops and child labour. Support these brands! Start researching into what YOU wear</p>
+            <button class="btn" onclick="showPopup('contactPopup')">Fast Fashion</button>
+        </div>
+    </div>
+
+    <!-- Popup Content for "Learn More" (About Us) -->
+    <div id="aboutPopup" class="popup-content">
+        <h3></h3>
+        <p>Our team consists of passionate individuals dedicated to environmental sustainability. We organize events, workshops, and initiatives to spread awareness about eco-friendly practices. Our goal is to create a lasting impact on our school and the surrounding community. Together, we can make a big difference in preserving the planet for future generations.</p>
+        <button class="popup-close" onclick="closePopup('aboutPopup')">Close</button>
+    </div>
+
+    <!-- Popup Content for "Get Involved" (Events) -->
+    <div id="eventsPopup" class="popup-content">
+        <h3>Upcoming Events - Get Involved</h3>
+        <p>
+Clothing production and disposal have serious environmental consequences, contributing to carbon emissions, water waste, and pollution. Synthetic fabrics like polyester release microplastics into waterways, harming marine life. cotton farming is water-intensive and involves harmful pesticides. Fast fashion's rapid turnover leads to massive textile waste, much of which ends up in landfills. This cycle not only depletes resources but also exploits workers in countries with weak labor laws. The need for sustainable practices is clear to reduce the industry's environmental impact.</p>
+        <button class="popup-close" onclick="closePopup('eventsPopup')">Close</button>
+    </div>
+
+    <!-- Popup Content for "Reach Out" (Contact Us) -->
+    <div id="contactPopup" class="popup-content">
+        <h3>Global Impact</h3>
+        <p>
+Fast fashion has a profound global impact, particularly through the exploitation of workers, including child labor, in low-wage countries. The industry's demand for cheap labor often results in unsafe working conditions and violations of human rights. Additionally, the relentless pace of production leads to economic instability in developing regions, as local economies become dependent on exploitative practices. The negative social and ethical consequences ripple worldwide, highlighting the urgent need for fair labor practices and a more equitable global fashion industry. </p>
+        <button class="popup-close" onclick="closePopup('contactPopup')">Close</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Zion Heights Eco Team. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Popup Functionality -->
+    <script>
+        // Function to show popup content
+        function showPopup(id) {
+            var popup = document.getElementById(id);
+            popup.classList.add('show');
+        }
+
+        // Function to close popup content
+        function closePopup(id) {
+            var popup = document.getElementById(id);
+            popup.classList.remove('show');
+        }
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
